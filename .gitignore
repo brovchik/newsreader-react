@@ -3,4 +3,5 @@
 /temp
 /public/css
 /public/js
+/src/NewsReader/namespaces.js
 *.iml
