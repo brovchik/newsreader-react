@@ -1,4 +1,8 @@
-NewsReader.ui.Header.HeaderToolbar.Button = React.createClass({
+NewsReader.ui.Buttons.Button = React.createClass({
+    /**
+     * Icons to show before button text
+     * Type {HTMLElement}[]
+     */
     ICONS: {
         load: <span className="glyphicon glyphicon-refresh"></span>,
         delete: <span className="glyphicon glyphicon-trash"></span>
