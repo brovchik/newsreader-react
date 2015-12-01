@@ -3,6 +3,7 @@ NewsReader.ui.Viewport = React.createClass({
         return (
             <div className="newsreader-viewport">
                 <NewsReader.ui.Header />
+                <NewsReader.ui.ContentBox />
             </div>
         );
     }
