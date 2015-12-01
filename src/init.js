@@ -1,4 +1,4 @@
 ReactDOM.render(
     <NewsReader.ui.Viewport />,
-    document.getElementById('container')
+    document.getElementById('news-reader-application')
 );
