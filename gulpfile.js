@@ -4,6 +4,8 @@ var runSequence = require('run-sequence');
 var less = require('gulp-less');
 var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
+var react = require('gulp-react');
+var htmlreplace = require('gulp-html-replace');
 var minifyCss = require('gulp-minify-css');
 var _ = require('lodash');
 var clean = require('gulp-clean');
@@ -15,7 +17,8 @@ gulp.task('clean', function(cb) {
     var src = [
         './temp/',
         './public/**/*.css',
-        './public/**/*.js'
+        './public/**/*.js',
+        '!./public/init/*.js'
     ];
 
     return gulp.src(src, { read: false }).pipe(clean());
@@ -47,10 +50,17 @@ gulp.task('cleanjs', function(cb) {
 // Concat user js
 gulp.task('ujsc', function() {
     var dest = './temp/js';
+    var srcFldr = './src/NewsReader/';
 
-    return gulp.src('./src/NewsReader/**/*.js')
+    gulp.src('./src/NewsReader/**/_.js')
+        .pipe(react())
+        .pipe(concat('namespaces.js'))
+        .pipe(gulp.dest(srcFldr));
+
+    return gulp.src([, './src/NewsReader/**/*.js', './src/init.js','!./src/NewsReader/**/_.js'])
+        .pipe(react())
         .pipe(concat('script.js'))
-        .pipe(gulp.dest(dest));
+        .pipe(gulp.dest(dest)) ;
 });
 
 

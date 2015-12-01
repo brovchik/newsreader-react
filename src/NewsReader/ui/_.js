@@ -1,4 +1,4 @@
-var NewsReader = React.createClass({
+NewsReader.ui = React.createClass({
     render: function() {
         return;
     }
