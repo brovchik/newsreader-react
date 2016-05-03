@@ -1,4 +1,16 @@
+/**
+ * Content box class. Contains main functionality. 
+ * 
+ * @class ContentBox
+ * @memberOf NewsReader.ui
+ */
 NewsReader.ui.ContentBox = React.createClass({
+    
+    /**
+     * @see ReactClass#render 
+     * @memberOf NewsReader.ui
+     * @instance
+     */
     render: function() {
         return (
             <div className="row" id="news-reader-content-box">
